@@ -1,0 +1,19 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.12",
+    "heartbeatAt": "2022-08-31T07:52:46.688121",
+    "startedAt": "2022-08-31T07:52:46.593857",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--net",
+        "vit_timm"
+    ],
+    "state": "running",
+    "program": "C:\\Users\\skgha\\Projects\\vision-transformers-cifar10-main\\train_cifar10.py",
+    "codePath": "train_cifar10.py",
+    "host": "DESKTOP-AK68943",
+    "username": "skgha",
+    "executable": "C:\\Users\\skgha\\anaconda3\\envs\\tfadv\\python.exe"
+}
