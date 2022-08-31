@@ -237,18 +237,18 @@ if args.resume:
     best_acc = checkpoint['acc']
     start_epoch = checkpoint['epoch']
 
-# Loss is CE
-criterion = nn.CrossEntropyLoss()
-l2_norm_clip = 1.5
-noise_multiplier = 1.3
-num_microbatches = 250
-learning_rate = 0.25
+
 
 if args.opt == "adam":
     optimizer = optim.Adam(net.parameters(), lr=args.lr)
 elif args.opt == "sgd":
     optimizer = optim.SGD(net.parameters(), lr=args.lr)  
 elif args.opt == "dp-sgd":
+    criterion = nn.CrossEntropyLoss()
+    l2_norm_clip = 1.5
+    noise_multiplier = 1.3
+    num_microbatches = 250
+    learning_rate = 0.25
     optimizer = tensorflow_privacy.DPKerasSGDOptimizer(
     l2_norm_clip=l2_norm_clip,
     noise_multiplier=noise_multiplier,
