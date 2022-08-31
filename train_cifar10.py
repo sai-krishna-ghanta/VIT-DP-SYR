@@ -256,7 +256,7 @@ elif args.opt == "dp-sgd":
     learning_rate=learning_rate) 
     
 # use cosine scheduling
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, args.n_epochs)
+#scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, args.n_epochs)
 
 ##### Training
 scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
@@ -338,7 +338,7 @@ for epoch in range(start_epoch, args.n_epochs):
     trainloss = train(epoch)
     val_loss, acc = test(epoch)
     
-    scheduler.step(epoch-1) # step cosine scheduling
+    #scheduler.step(epoch-1) # step cosine scheduling
     
     list_loss.append(val_loss)
     list_acc.append(acc)
