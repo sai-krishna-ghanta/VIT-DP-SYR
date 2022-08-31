@@ -272,9 +272,9 @@ def train(epoch):
         with torch.cuda.amp.autocast(enabled=use_amp):
             outputs = net(inputs)
             loss = criterion(outputs, targets)
-        scaler.scale(loss).backward()
-        scaler.step(optimizer)
-        scaler.update()
+        #scaler.scale(loss).backward()
+        #scaler.step(optimizer)
+        #scaler.update()
         optimizer.zero_grad()
 
         train_loss += loss.item()
